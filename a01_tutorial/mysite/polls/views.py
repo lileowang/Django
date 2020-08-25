@@ -8,11 +8,8 @@ from .models import Question
 def index(request):
     # get last 2 records
     latest_question_list = Question.objects.order_by('-pub_date')[:2]
-    template = loader.get_template('polls/index.html')
-    context = {
-        'latest_question_list': latest_question_list
-    }
-    return HttpResponse(template.render(context, request))
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
 
 
 def detail(request, question_id):
