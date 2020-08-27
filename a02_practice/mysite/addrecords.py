@@ -11,7 +11,6 @@ q = Question(question_text='q3', pub_date=timezone.now())
 q.save()
 
 q = Question.objects.all()
-print('Questions fields: id, question_text, pub_date')
 for d in q:
     print(d.id, d.question_text, d.pub_date)
 
@@ -32,6 +31,5 @@ q.choice_set.create(choice_text='c32', votes=0)
 q.choice_set.create(choice_text='c33', votes=0)
 
 c = Choice.objects.all()
-print('Choice fields: id, question, choice_text, votes')
 for d in c:
     print(d.id, d.question, d.choice_text, d.votes)
