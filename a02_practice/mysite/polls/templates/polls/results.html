@@ -2,10 +2,11 @@
 {% block head %}
 <script>
     // alert('hello');
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#submit').disabled = true;
 
         document.querySelector('#task').onkeyup = () => {
+            // console.log('keyup');
             if (document.querySelector('#task').value.length > 0) {
                 document.querySelector('#submit').disabled = false;
             } else {
@@ -14,7 +15,6 @@
         };
 
         document.querySelector('form').onsubmit = () => {
-
             let task = document.querySelector('#task').value;
             console.log(task);
 
@@ -24,14 +24,13 @@
 
             document.querySelector('#task').value = '';
             document.querySelector('#submit').disabled = true;
-            
+
             return false;
         };
     });
 </script>
 {% endblock %}
 {% block body %}
-
     <h1>{{ question.question_text }}</h1>
     <ul>
     {% for choice in question.choice_set.all %}
