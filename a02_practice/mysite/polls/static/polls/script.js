@@ -1,6 +1,9 @@
 // alert('hello');
+console.log('start.');
 
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('dom content loaded.');
+
     document.querySelector('#submit').disabled = true;
 
     document.querySelector('#task').onkeyup = () => {

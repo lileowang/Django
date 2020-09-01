@@ -19,10 +19,12 @@ q = Question.objects.get(question_text='q1')
 q.choice_set.create(choice_text='c11', votes=0)
 q.choice_set.create(choice_text='c12', votes=0)
 q.choice_set.create(choice_text='c13', votes=0)
+
 q = Question.objects.get(question_text='q2')
 q.choice_set.create(choice_text='c21', votes=0)
 q.choice_set.create(choice_text='c22', votes=0)
 q.choice_set.create(choice_text='c23', votes=0)
+
 q = Question.objects.get(question_text='q3')
 q.choice_set.create(choice_text='c31', votes=0)
 q.choice_set.create(choice_text='c32', votes=0)
