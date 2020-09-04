@@ -1,0 +1,8 @@
+body {
+    background: wheat url("images/background.jpg") no-repeat center;
+    background-size: cover;
+}
+
+li {
+    color: red;
+}
