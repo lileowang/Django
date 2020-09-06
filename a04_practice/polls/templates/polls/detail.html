@@ -1,10 +1,9 @@
 {% extends "polls/base.html" %}
-{% block body%}
+{% block body %}
     <h1>{{ question.question_text }}</h1>
     {% if error_message %}
         <p><strong>{{ error_message }}</strong></p>
     {% endif %}
-
     <form method="POST" action="{% url 'polls:vote' question.id %}">
         {% csrf_token %}
         {% for choice in question.choice_set.all|dictsort:"id" %}

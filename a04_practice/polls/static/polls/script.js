@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#tasks').append(li);
 
         document.querySelector('#task').value = '';
-        document.querySelector('#submit').disabled = true;
+
         return false;
     };
+
 });

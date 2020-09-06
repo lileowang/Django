@@ -1,20 +1,22 @@
 {% extends "polls/base.html" %}
 {% load static %}
-{% block head%}
+{% block head %}
     <link rel="stylesheet" type="text/css"
         href="{% static 'polls/style.css' %}"
     >
+    <script src="{% static 'polls/script.js' %}"></script>
 {% endblock %}
+
 {% block body%}
     <h1>{{ question.question_text }}</h1>
-    <ul>
+    <u1>
     {% for choice in question.choice_set.all|dictsort:"id" %}
         <li>
             {{ choice.choice_text }}: {{ choice.votes }}
             vote{{ choice.votes|pluralize }}
         </li>
     {% endfor %}
-    </ul>
+    </u1>
     <a href="{% url 'polls:detail' question.id %}">
         vote again?
     </a>
@@ -24,7 +26,4 @@
         <input id="submit" type="submit" value="add">
     </form>
     <ul id="tasks"></ul>
-
-    <script src="{% static 'polls/script.js' %}"></script>
-
 {% endblock %}
