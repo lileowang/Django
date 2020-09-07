@@ -1,4 +1,4 @@
-// alert('hello');
+// alert('start');
 console.log('start');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -26,5 +26,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
         return false;
     };
-
 });

@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-import os
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,8 +19,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
+import os
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '=1*o-qp*d3aey$_v8#@&05)+4x#vzy=bakbmb%z576xkxrrd_#')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'yyehgg+ij*e0yt)ub67i82t_l=lp_5udl35h!47=+94j++^s54')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', '') != 'False'
@@ -39,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls.apps.PollsConfig'
+    'polls.apps.PollsConfig',
 ]
 
 MIDDLEWARE = [
@@ -122,4 +121,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+import django_heroku
 django_heroku.settings(locals())

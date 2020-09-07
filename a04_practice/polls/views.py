@@ -7,7 +7,7 @@ from .models import Question, Choice
 
 
 def index(request):
-    # return HttpResponse('polls index page.')
+    # return HttpResponse('polls index page')
     latest_question_list = Question.objects.order_by('-pub_date')[:2]
     context = {'latest_question_list': latest_question_list}
     return render(request, 'polls/index.html', context)
@@ -28,7 +28,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         context = {
             'question': question,
-            'error_message': "you didn't select a choice.",
+            'error_message': "you didn't select a choice",
         }
         return render(request, 'polls/detail.html', context)
     else:
