@@ -1,0 +1,12 @@
+{% extends "rsvp/base.html" %}
+{% block body %}
+<h1>RSVP</h1>
+<form method="POST" action="{% url 'rsvp:index' %}">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div>
+        {{ form.as_p }}
+    </div>
+    <input type="submit" value="response">
+</form>
+{% endblock %}

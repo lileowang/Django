@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', polls.views.index, name='index'),
     path('polls/', include('polls.urls')),
+    path('rsvp/', include('rsvp.urls')),
 ]

@@ -1,0 +1,22 @@
+{% extends "rsvp/base.html" %}
+
+{% block body%}
+<h1>
+    <ul>
+        <li>
+            Name: <strong>{{ name }} </strong>
+        </li>
+        <li>
+            email: <strong>{{ email }}</strong>
+        </li>
+        <li>
+            Feedback: <strong>{{ feedback }}</strong>
+        </li>
+    </ul>
+</h1>
+<h2>
+    <a href="{% url 'rsvp:index' %}">
+        RSVP again?
+    </a>
+</h2>
+{% endblock %}
