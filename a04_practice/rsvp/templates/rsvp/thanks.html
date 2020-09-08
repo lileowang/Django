@@ -1,22 +1,19 @@
 {% extends "rsvp/base.html" %}
 
 {% block body%}
-<h1>
-    <ul>
-        <li>
-            Name: <strong>{{ name }} </strong>
-        </li>
-        <li>
-            email: <strong>{{ email }}</strong>
-        </li>
-        <li>
-            Feedback: <strong>{{ feedback }}</strong>
-        </li>
-    </ul>
-</h1>
 <h2>
+    <ul>
+        {% for key, value in fields.items %}
+        <li>
+            {{ key }}: {{ value }}
+        </li>
+
+        {% endfor %}
+    </ul>
+</h2>
+<h1>
     <a href="{% url 'rsvp:index' %}">
         RSVP again?
     </a>
-</h2>
+</h1>
 {% endblock %}

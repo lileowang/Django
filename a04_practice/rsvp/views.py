@@ -12,8 +12,16 @@ def index(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
+            arrival_date = form.cleaned_data['arrival_date']
             feedback = form.cleaned_data['feedback']
-            context = {'name': name, 'email': email, 'feedback': feedback}
+            context = {
+                'fields': {
+                    'name': name,
+                    'email': email,
+                    'arrival_date': arrival_date,
+                    'feedback': feedback,
+                }
+            }
             return render(request, 'rsvp/thanks.html', context)
         else:
             # return HttpResponse('RSVP form is invalid')
